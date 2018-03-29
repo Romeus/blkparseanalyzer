@@ -3,6 +3,7 @@ import matplotlib.pyplot as plt
 def visualize_generic(data, xlabel, ylabel, title):
     fig, ax = plt.subplots()
     ax.set(xlabel=xlabel, ylabel=ylabel, title=title)
+    ax.grid()
     ax.plot(data)
 
 def visualize_os_overhead(data):
