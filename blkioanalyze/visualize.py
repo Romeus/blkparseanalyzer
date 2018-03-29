@@ -10,3 +10,9 @@ def visualize_os_overhead(data):
 
 def visualize_sector_reads(data):
     visualize_generic(data, "time", "sector number", "Sector reads")
+
+def visualize_sector_counts(data):
+    fig, ax = plt.subplots()
+    ax.set(xlabel="sector", ylabel="num_reads", title="Number of reads per sector")
+    ax.plot(data.sector, data.num_reads)
+
