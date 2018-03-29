@@ -22,7 +22,7 @@ class BlkIOAnalyzer(object):
         # We need to calculate q2c, d2c and os_overhead fields and populate
         # with their values only one of the records (I have chosen 'Q' type).
         # Other two records will be filtered out.
-        for i in range(1, int(len(result)/3), 3):
+        for i in range(1, int(len(result)), 3):
             q_row = result.loc[i]
             d_row = result.loc[i+1]
             c_row = result.loc[i+2]
