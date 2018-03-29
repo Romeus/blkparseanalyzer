@@ -41,7 +41,6 @@ class BlkBinaryParser(object):
     def __init__(self, filename):
         self.f = open(filename, "rb")
         self.result = []
-        self.result_transformed = []
 
     def __transform(self, blk_io_trace, masked_action, **kwargs):
         """
