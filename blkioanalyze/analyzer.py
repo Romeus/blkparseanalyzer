@@ -43,7 +43,8 @@ class BlkIOAnalyzer(object):
 
     def __get_sectors_count(self, x):
         num_reads = len(x)
-        return pd.Series([x.sector, num_reads], index=['sector', 'num_reads'])
+        sector = x.sector.iloc[0]
+        return pd.Series([sector, num_reads], index=['sector', 'num_reads'])
 
     def get_result(self):
         return self.result
