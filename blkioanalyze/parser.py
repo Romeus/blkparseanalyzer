@@ -27,6 +27,7 @@ class BlkBinaryParser(object):
     # data shared among all instances
     # actions that will be saved in output stream
     blk_action = {'Q':1, 'D':7, 'C':8}
+    blk_reverse_action = {1: 'Q', 7: 'D', 8: 'C'}
     # Binary format for unpacking blk_io_trace structure
     # from C to python
     blk_io_trace_fmt = "@IIQQIIIIIHH"
@@ -48,12 +49,7 @@ class BlkBinaryParser(object):
         convenient format
         """
         # Transform action from a digit to letter
-        if masked_action == __class__.blk_action['Q']:
-            action = "Q"
-        elif masked_action == __class__.blk_action['D']:
-            action = "D"
-        else:
-            action = "C"
+        action = __class__.blk_reverse_action[masked_action]
 
         transformed = __class__.BlkIOTraceTransformed(
             blk_io_trace.time,
